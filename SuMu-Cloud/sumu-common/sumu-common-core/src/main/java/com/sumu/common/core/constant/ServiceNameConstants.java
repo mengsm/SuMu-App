@@ -3,7 +3,7 @@ package com.sumu.common.core.constant;
 /**
  * 服务名称
  *
- * @author ruoyi
+ * @author sumu
  */
 public class ServiceNameConstants
 {

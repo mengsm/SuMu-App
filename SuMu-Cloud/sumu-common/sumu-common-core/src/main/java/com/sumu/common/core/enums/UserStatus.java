@@ -3,7 +3,7 @@ package com.sumu.common.core.enums;
 /**
  * 用户状态
  *
- * @author ruoyi
+ * @author sumu
  */
 public enum UserStatus
 {

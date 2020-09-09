@@ -3,7 +3,7 @@ package com.sumu.auth.form;
 /**
  * 用户登录对象
  *
- * @author ruoyi
+ * @author sumu
  */
 public class LoginBody
 {

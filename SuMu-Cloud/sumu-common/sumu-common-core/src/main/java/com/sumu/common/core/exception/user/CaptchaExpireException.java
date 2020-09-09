@@ -3,7 +3,7 @@ package com.sumu.common.core.exception.user;
 /**
  * 验证码失效异常类
  *
- * @author ruoyi
+ * @author sumu
  */
 public class CaptchaExpireException extends UserException
 {

@@ -3,7 +3,7 @@ package com.sumu.common.core.exception;
 /**
  * 自定义异常
  *
- * @author ruoyi
+ * @author sumu
  */
 public class CustomException extends RuntimeException
 {

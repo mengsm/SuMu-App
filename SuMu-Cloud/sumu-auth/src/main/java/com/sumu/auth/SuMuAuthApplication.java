@@ -7,7 +7,7 @@ import org.springframework.cloud.client.SpringCloudApplication;
 /**
  * 认证授权中心
  *
- * @author ruoyi
+ * @author sumu
  */
 @EnableRyFeignClients
 @SpringCloudApplication

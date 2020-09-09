@@ -15,7 +15,7 @@ import java.util.regex.Pattern;
 /**
  * 黑名单过滤器
  *
- * @author ruoyi
+ * @author sumu
  */
 @Component
 public class BlackListUrlFilter extends AbstractGatewayFilterFactory<BlackListUrlFilter.Config>

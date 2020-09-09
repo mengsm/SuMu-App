@@ -3,7 +3,7 @@ package com.sumu.common.core.constant;
 /**
  * 任务调度通用常量
  *
- * @author ruoyi
+ * @author sumu
  */
 public class ScheduleConstants
 {

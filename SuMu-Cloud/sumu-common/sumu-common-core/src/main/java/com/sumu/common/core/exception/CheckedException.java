@@ -3,7 +3,7 @@ package com.sumu.common.core.exception;
 /**
  * 检查异常
  *
- * @author ruoyi
+ * @author sumu
  */
 public class CheckedException extends RuntimeException
 {

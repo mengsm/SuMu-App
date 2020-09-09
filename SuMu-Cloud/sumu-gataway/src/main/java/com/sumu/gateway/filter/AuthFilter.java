@@ -26,7 +26,7 @@ import java.util.Arrays;
 /**
  * 网关鉴权
  *
- * @author ruoyi
+ * @author sumu
  */
 @Component
 public class AuthFilter implements GlobalFilter, Ordered

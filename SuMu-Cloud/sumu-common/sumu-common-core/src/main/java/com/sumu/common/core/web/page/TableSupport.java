@@ -5,7 +5,7 @@ import com.sumu.common.core.utils.ServletUtils;
 /**
  * 表格数据处理
  *
- * @author ruoyi
+ * @author sumu
  */
 public class TableSupport
 {

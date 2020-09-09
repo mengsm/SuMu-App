@@ -5,7 +5,7 @@ import com.sumu.common.core.utils.StringUtils;
 /**
  * 分页数据
  *
- * @author ruoyi
+ * @author sumu
  */
 public class PageDomain
 {

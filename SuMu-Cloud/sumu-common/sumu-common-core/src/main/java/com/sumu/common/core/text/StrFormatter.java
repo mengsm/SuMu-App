@@ -5,7 +5,7 @@ import com.sumu.common.core.utils.StringUtils;
 /**
  * 字符串格式化
  *
- * @author ruoyi
+ * @author sumu
  */
 public class StrFormatter
 {

@@ -12,7 +12,7 @@ import javax.validation.constraints.Size;
 /**
  * 岗位表 sys_post
  *
- * @author ruoyi
+ * @author sumu
  */
 public class SysPost extends BaseEntity
 {

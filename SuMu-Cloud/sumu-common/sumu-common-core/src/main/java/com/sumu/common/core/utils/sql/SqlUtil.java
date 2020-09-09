@@ -6,7 +6,7 @@ import com.sumu.common.core.utils.StringUtils;
 /**
  * sql操作工具类
  *
- * @author ruoyi
+ * @author sumu
  */
 public class SqlUtil
 {

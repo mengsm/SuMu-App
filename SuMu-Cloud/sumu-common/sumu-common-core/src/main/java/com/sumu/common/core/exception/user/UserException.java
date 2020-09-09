@@ -6,7 +6,7 @@ import com.sumu.common.core.exception.BaseException;
 /**
  * 用户信息异常类
  *
- * @author ruoyi
+ * @author sumu
  */
 public class UserException extends BaseException
 {

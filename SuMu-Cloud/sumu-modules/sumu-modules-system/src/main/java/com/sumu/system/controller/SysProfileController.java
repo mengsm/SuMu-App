@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.*;
 /**
  * 个人信息 业务处理
  *
- * @author ruoyi
+ * @author sumu
  */
 @RestController
 @RequestMapping("/user/profile")

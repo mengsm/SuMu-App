@@ -7,7 +7,7 @@ import java.io.Serializable;
 /**
  * 响应信息主体
  *
- * @author ruoyi
+ * @author sumu
  */
 public class R<T> implements Serializable
 {

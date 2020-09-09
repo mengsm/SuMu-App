@@ -8,7 +8,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 /**
  * 权限获取工具类
  *
- * @author ruoyi
+ * @author sumu
  */
 public class SecurityUtils
 {

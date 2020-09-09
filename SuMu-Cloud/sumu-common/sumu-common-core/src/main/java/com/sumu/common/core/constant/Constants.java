@@ -3,7 +3,7 @@ package com.sumu.common.core.constant;
 /**
  * 通用常量信息
  *
- * @author ruoyi
+ * @author sumu
  */
 public class Constants
 {

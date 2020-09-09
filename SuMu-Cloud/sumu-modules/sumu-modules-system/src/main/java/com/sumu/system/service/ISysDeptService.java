@@ -8,7 +8,7 @@ import java.util.List;
 /**
  * 部门管理 服务层
  *
- * @author ruoyi
+ * @author sumu
  */
 public interface ISysDeptService
 {

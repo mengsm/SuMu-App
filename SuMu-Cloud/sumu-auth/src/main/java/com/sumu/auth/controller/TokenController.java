@@ -17,7 +17,7 @@ import javax.servlet.http.HttpServletRequest;
 /**
  * token 控制
  *
- * @author ruoyi
+ * @author sumu
  */
 @RestController
 public class TokenController

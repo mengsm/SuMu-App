@@ -3,7 +3,7 @@ package com.sumu.system.domain.vo;
 /**
  * 路由显示信息
  *
- * @author ruoyi
+ * @author sumu
  */
 public class MetaVo
 {

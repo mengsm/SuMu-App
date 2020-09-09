@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 /**
  * 异步调用日志服务
  *
- * @author ruoyi
+ * @author sumu
  */
 @Service
 public class AsyncLogService

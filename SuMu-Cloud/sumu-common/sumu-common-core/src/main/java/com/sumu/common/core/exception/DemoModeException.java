@@ -3,7 +3,7 @@ package com.sumu.common.core.exception;
 /**
  * 演示模式异常
  *
- * @author ruoyi
+ * @author sumu
  */
 public class DemoModeException extends RuntimeException
 {

@@ -3,7 +3,7 @@ package com.sumu.common.core.utils.sign;
 /**
  * Base64工具类
  *
- * @author ruoyi
+ * @author sumu
  */
 public final class Base64
 {

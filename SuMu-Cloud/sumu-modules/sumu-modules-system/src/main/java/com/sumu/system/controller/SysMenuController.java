@@ -20,7 +20,7 @@ import java.util.List;
 /**
  * 菜单信息
  *
- * @author ruoyi
+ * @author sumu
  */
 @RestController
 @RequestMapping("/menu")

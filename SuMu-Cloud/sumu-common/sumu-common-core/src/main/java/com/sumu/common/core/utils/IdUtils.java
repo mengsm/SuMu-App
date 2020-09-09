@@ -5,7 +5,7 @@ import com.sumu.common.core.text.UUID;
 /**
  * ID生成器工具类
  *
- * @author ruoyi
+ * @author sumu
  */
 public class IdUtils
 {

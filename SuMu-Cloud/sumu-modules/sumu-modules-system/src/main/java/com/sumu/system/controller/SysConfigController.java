@@ -22,7 +22,7 @@ import java.util.List;
 /**
  * 参数配置 信息操作处理
  *
- * @author ruoyi
+ * @author sumu
  */
 @RestController
 @RequestMapping("/config")

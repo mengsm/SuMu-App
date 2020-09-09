@@ -8,7 +8,7 @@ import java.util.Set;
 /**
  * 用户信息
  *
- * @author ruoyi
+ * @author sumu
  */
 public class LoginUser implements Serializable
 {

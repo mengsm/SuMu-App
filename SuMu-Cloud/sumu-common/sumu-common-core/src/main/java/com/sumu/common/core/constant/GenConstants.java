@@ -3,7 +3,7 @@ package com.sumu.common.core.constant;
 /**
  * 代码生成通用常量
  *
- * @author ruoyi
+ * @author sumu
  */
 public class GenConstants
 {

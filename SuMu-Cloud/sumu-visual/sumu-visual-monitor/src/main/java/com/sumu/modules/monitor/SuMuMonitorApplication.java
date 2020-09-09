@@ -7,7 +7,7 @@ import org.springframework.cloud.client.SpringCloudApplication;
 /**
  * 监控中心
  *
- * @author ruoyi
+ * @author sumu
  */
 @EnableAdminServer
 @SpringCloudApplication

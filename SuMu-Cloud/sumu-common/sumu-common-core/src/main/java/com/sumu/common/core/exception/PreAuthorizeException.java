@@ -3,7 +3,7 @@ package com.sumu.common.core.exception;
 /**
  * 权限异常
  *
- * @author ruoyi
+ * @author sumu
  */
 public class PreAuthorizeException extends RuntimeException
 {

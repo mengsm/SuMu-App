@@ -3,7 +3,7 @@ package com.sumu.common.log.enums;
 /**
  * 业务操作类型
  *
- * @author ruoyi
+ * @author sumu
  */
 public enum BusinessType
 {

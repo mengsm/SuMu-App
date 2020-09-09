@@ -3,7 +3,7 @@ package com.sumu.common.core.exception;
 /**
  * 基础异常
  *
- * @author ruoyi
+ * @author sumu
  */
 public class BaseException extends RuntimeException
 {

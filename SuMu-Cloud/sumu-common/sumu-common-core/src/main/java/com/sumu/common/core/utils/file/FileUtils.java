@@ -7,7 +7,7 @@ import java.net.URLEncoder;
 /**
  * 文件处理工具类
  *
- * @author ruoyi
+ * @author sumu
  */
 public class FileUtils extends org.apache.commons.io.FileUtils
 {

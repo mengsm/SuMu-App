@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
 /**
  * 日志服务降级处理
  *
- * @author ruoyi
+ * @author sumu
  */
 @Component
 public class RemoteLogFallbackFactory implements FallbackFactory<RemoteLogService>

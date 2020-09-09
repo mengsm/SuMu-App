@@ -3,7 +3,7 @@ package com.sumu.common.log.enums;
 /**
  * 操作状态
  *
- * @author ruoyi
+ * @author sumu
  *
  */
 public enum BusinessStatus

@@ -30,7 +30,7 @@ import java.lang.reflect.Method;
 /**
  * 操作日志记录处理
  *
- * @author ruoyi
+ * @author sumu
  */
 @Aspect
 @Component
