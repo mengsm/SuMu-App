@@ -212,6 +212,7 @@
         <module>sumu-api</module>
         <module>sumu-auth</module>
         <module>sumu-visual</module>
+        <module>sumu-modules</module>
     </modules>
     <packaging>pom</packaging>
 

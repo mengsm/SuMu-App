@@ -42,7 +42,7 @@ public class LogAspect
     private AsyncLogService asyncLogService;
 
     // 配置织入点
-    @Pointcut("@annotation(com.ruoyi.common.log.annotation.Log)")
+    @Pointcut("@annotation(com.sumu.common.log.annotation.Log)")
     public void logPointCut()
     {
     }
