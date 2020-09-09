@@ -168,12 +168,12 @@
                 <version>${sumu.version}</version>
             </dependency>
 
-<!--            &lt;!&ndash; 安全模块 &ndash;&gt;-->
-<!--            <dependency>-->
-<!--                <groupId>com.ruoyi</groupId>-->
-<!--                <artifactId>ruoyi-common-security</artifactId>-->
-<!--                <version>${ruoyi.version}</version>-->
-<!--            </dependency>-->
+            <!-- 安全模块 -->
+            <dependency>
+                <groupId>com.sumu</groupId>
+                <artifactId>sumu-common-security</artifactId>
+                <version>${sumu.version}</version>
+            </dependency>
 
 <!--            &lt;!&ndash; 权限范围 &ndash;&gt;-->
 <!--            <dependency>-->
@@ -182,12 +182,12 @@
 <!--                <version>${ruoyi.version}</version>-->
 <!--            </dependency>-->
 
-<!--            &lt;!&ndash; 日志记录 &ndash;&gt;-->
-<!--            <dependency>-->
-<!--                <groupId>com.ruoyi</groupId>-->
-<!--                <artifactId>ruoyi-common-log</artifactId>-->
-<!--                <version>${ruoyi.version}</version>-->
-<!--            </dependency>-->
+            <!-- 日志记录 -->
+            <dependency>
+                <groupId>com.sumu</groupId>
+                <artifactId>sumu-common-log</artifactId>
+                <version>${sumu.version}</version>
+            </dependency>
 
             <!-- 缓存服务 -->
             <dependency>

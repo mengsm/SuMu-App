@@ -3,25 +3,26 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>sumu</artifactId>
+        <artifactId>sumu-common</artifactId>
         <groupId>com.sumu</groupId>
         <version>1.0.0</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <modules>
-        <module>sumu-common-core</module>
-        <module>sumu-common-redis</module>
-        <module>sumu-common-swagger</module>
-        <module>sumu-common-log</module>
-        <module>sumu-common-security</module>
-    </modules>
-
-    <artifactId>sumu-common</artifactId>
-    <packaging>pom</packaging>
+    <artifactId>sumu-common-log</artifactId>
 
     <description>
-        sumu-common通用模块
+        sumu-common-log日志记录
     </description>
+
+
+    <dependencies>
+        <!-- sumu Common Security -->
+        <dependency>
+            <groupId>com.sumu</groupId>
+            <artifactId>sumu-common-security</artifactId>
+        </dependency>
+    </dependencies>
+
 
 </project>
