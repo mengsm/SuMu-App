@@ -211,6 +211,7 @@
         <module>sumu-common</module>
         <module>sumu-api</module>
         <module>sumu-auth</module>
+        <module>sumu-visual</module>
     </modules>
     <packaging>pom</packaging>
 
