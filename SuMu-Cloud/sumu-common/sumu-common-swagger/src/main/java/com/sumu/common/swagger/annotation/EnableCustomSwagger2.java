@@ -1,6 +1,6 @@
 package com.sumu.common.swagger.annotation;
 
-import com.ruoyi.common.swagger.config.SwaggerAutoConfiguration;
+import com.sumu.common.swagger.config.SwaggerAutoConfiguration;
 import org.springframework.context.annotation.Import;
 
 import java.lang.annotation.*;

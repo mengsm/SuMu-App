@@ -196,12 +196,12 @@
                 <version>${sumu.version}</version>
             </dependency>
 
-<!--            &lt;!&ndash; 系统接口 &ndash;&gt;-->
-<!--            <dependency>-->
-<!--                <groupId>com.ruoyi</groupId>-->
-<!--                <artifactId>ruoyi-api-system</artifactId>-->
-<!--                <version>${ruoyi.version}</version>-->
-<!--            </dependency>-->
+            <!-- 系统接口 -->
+            <dependency>
+                <groupId>com.sumu</groupId>
+                <artifactId>sumu-api-system</artifactId>
+                <version>${sumu.version}</version>
+            </dependency>
 
         </dependencies>
     </dependencyManagement>
@@ -209,6 +209,7 @@
     <modules>
         <module>sumu-gataway</module>
         <module>sumu-common</module>
+        <module>sumu-api</module>
     </modules>
     <packaging>pom</packaging>
 
