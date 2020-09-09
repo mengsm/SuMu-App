@@ -17,5 +17,12 @@ public class SuMuGatewayApplication
     public static void main(String[] args)
     {
         SpringApplication.run(SuMuGatewayApplication.class, args);
+        System.out.println("(♥◠‿◠)ﾉﾞ  苏木网关启动成功   ლ(´ڡ`ლ)ﾞ  \n" +
+                "  _____ __  __ \n" +
+                " / ____|  \\/  |\n" +
+                "| (___ | \\  / |\n" +
+                " \\___ \\| |\\/| |\n" +
+                " ____) | |  | |\n" +
+                "|_____/|_|  |_|\n");
     }
 }
