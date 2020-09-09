@@ -11,6 +11,7 @@
 
     <modules>
         <module>sumu-common-core</module>
+        <module>sumu-common-redis</module>
     </modules>
 
     <artifactId>sumu-common</artifactId>

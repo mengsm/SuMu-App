@@ -13,7 +13,7 @@
     <description>苏木-微服务系统</description>
 
     <properties>
-        <sumu.version>2.1.0</sumu.version>
+        <sumu.version>1.0.0</sumu.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.8</java.version>
@@ -155,11 +155,11 @@
             </dependency>
 
             <!-- 核心模块 -->
-<!--            <dependency>-->
-<!--                <groupId>com.ruoyi</groupId>-->
-<!--                <artifactId>ruoyi-common-core</artifactId>-->
-<!--                <version>${ruoyi.version}</version>-->
-<!--            </dependency>-->
+            <dependency>
+                <groupId>com.sumu</groupId>
+                <artifactId>sumu-common-core</artifactId>
+                <version>${sumu.version}</version>
+            </dependency>
 
 <!--            &lt;!&ndash; 接口模块 &ndash;&gt;-->
 <!--            <dependency>-->
@@ -189,12 +189,12 @@
 <!--                <version>${ruoyi.version}</version>-->
 <!--            </dependency>-->
 
-<!--            &lt;!&ndash; 缓存服务 &ndash;&gt;-->
-<!--            <dependency>-->
-<!--                <groupId>com.ruoyi</groupId>-->
-<!--                <artifactId>ruoyi-common-redis</artifactId>-->
-<!--                <version>${ruoyi.version}</version>-->
-<!--            </dependency>-->
+            <!-- 缓存服务 -->
+            <dependency>
+                <groupId>com.sumu</groupId>
+                <artifactId>sumu-common-redis</artifactId>
+                <version>${sumu.version}</version>
+            </dependency>
 
 <!--            &lt;!&ndash; 系统接口 &ndash;&gt;-->
 <!--            <dependency>-->
@@ -207,12 +207,6 @@
     </dependencyManagement>
 
     <modules>
-<!--        <module>ruoyi-auth</module>-->
-<!--        <module>ruoyi-gateway</module>-->
-<!--        <module>ruoyi-visual</module>-->
-<!--        <module>ruoyi-modules</module>-->
-<!--        <module>ruoyi-api</module>-->
-<!--        <module>ruoyi-common</module>-->
         <module>sumu-gataway</module>
         <module>sumu-common</module>
     </modules>
