@@ -36,7 +36,7 @@ public class PreAuthorizeAspect
     /** 管理员角色权限标识 */
     private static final String SUPER_ADMIN = "admin";
 
-    @Around("@annotation(com.ruoyi.common.security.annotation.PreAuthorize)")
+    @Around("@annotation(com.sumu.common.security.annotation.PreAuthorize)")
     public Object around(ProceedingJoinPoint point) throws Throwable
     {
         Signature signature = point.getSignature();

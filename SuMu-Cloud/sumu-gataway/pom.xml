@@ -65,10 +65,10 @@
         </dependency>
 
         <!-- RuoYi Common Redis-->
-<!--        <dependency>-->
-<!--            <groupId>com.ruoyi</groupId>-->
-<!--            <artifactId>ruoyi-common-redis</artifactId>-->
-<!--        </dependency>-->
+        <dependency>
+            <groupId>com.sumu</groupId>
+            <artifactId>sumu-common-redis</artifactId>
+        </dependency>
 
         <!-- Swagger -->
         <dependency>
