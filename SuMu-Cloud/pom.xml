@@ -175,12 +175,12 @@
                 <version>${sumu.version}</version>
             </dependency>
 
-<!--            &lt;!&ndash; 权限范围 &ndash;&gt;-->
-<!--            <dependency>-->
-<!--                <groupId>com.ruoyi</groupId>-->
-<!--                <artifactId>ruoyi-common-datascope</artifactId>-->
-<!--                <version>${ruoyi.version}</version>-->
-<!--            </dependency>-->
+            <!-- 权限范围 -->
+            <dependency>
+                <groupId>com.sumu</groupId>
+                <artifactId>sumu-common-datascope</artifactId>
+                <version>${sumu.version}</version>
+            </dependency>
 
             <!-- 日志记录 -->
             <dependency>
