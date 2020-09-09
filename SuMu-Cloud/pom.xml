@@ -161,12 +161,12 @@
                 <version>${sumu.version}</version>
             </dependency>
 
-<!--            &lt;!&ndash; 接口模块 &ndash;&gt;-->
-<!--            <dependency>-->
-<!--                <groupId>com.ruoyi</groupId>-->
-<!--                <artifactId>ruoyi-common-swagger</artifactId>-->
-<!--                <version>${ruoyi.version}</version>-->
-<!--            </dependency>-->
+            <!-- 接口模块 -->
+            <dependency>
+                <groupId>com.sumu</groupId>
+                <artifactId>sumu-common-swagger</artifactId>
+                <version>${sumu.version}</version>
+            </dependency>
 
 <!--            &lt;!&ndash; 安全模块 &ndash;&gt;-->
 <!--            <dependency>-->

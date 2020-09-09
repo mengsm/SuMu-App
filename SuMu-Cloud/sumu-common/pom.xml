@@ -12,6 +12,7 @@
     <modules>
         <module>sumu-common-core</module>
         <module>sumu-common-redis</module>
+        <module>sumu-common-swagger</module>
     </modules>
 
     <artifactId>sumu-common</artifactId>
