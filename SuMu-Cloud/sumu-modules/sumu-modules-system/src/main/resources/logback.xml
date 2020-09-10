@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration scan="true" scanPeriod="60 seconds" debug="false">
     <!-- 日志存放路径 -->
-	<property name="log.path" value="/Users/fengjian/projects/SuMu-App/SuMu-Cloud/logs/ruoyi-system" />
+	<property name="log.path" value="/Users/apple/projects/SuMu-App/SuMu-Cloud/logs/ruoyi-system" />
    <!-- 日志输出格式 -->
 	<property name="log.pattern" value="%d{HH:mm:ss.SSS} [%thread] %-5level %logger{20} - [%method,%line] - %msg%n" />:ss} %-5level ${springAppName:-} %thread %logger %msg%n"/>
 
@@ -65,7 +65,7 @@
 	<root level="info">
 		<appender-ref ref="console" />
 	</root>
-	
+
 	<!--系统操作日志-->
     <root level="info">
         <appender-ref ref="file_info" />
