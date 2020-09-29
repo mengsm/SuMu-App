@@ -17,6 +17,7 @@
     </description>
     <modules>
         <module>sumu-modules-system</module>
+        <module>sumu-modules-gen</module>
     </modules>
 
 </project>
