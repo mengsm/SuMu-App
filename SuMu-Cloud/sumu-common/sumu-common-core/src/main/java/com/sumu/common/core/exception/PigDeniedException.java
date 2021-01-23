@@ -20,26 +20,26 @@ import lombok.NoArgsConstructor;
 
 /**
  * @author lengleng
- * @date 😴2018年06月22日16:21:57
+ * @date 2018年06月22日16:22:03 403 授权拒绝
  */
 @NoArgsConstructor
-public class CheckedException extends RuntimeException {
+public class PigDeniedException extends RuntimeException {
 
 	private static final long serialVersionUID = 1L;
 
-	public CheckedException(String message) {
+	public PigDeniedException(String message) {
 		super(message);
 	}
 
-	public CheckedException(Throwable cause) {
+	public PigDeniedException(Throwable cause) {
 		super(cause);
 	}
 
-	public CheckedException(String message, Throwable cause) {
+	public PigDeniedException(String message, Throwable cause) {
 		super(message, cause);
 	}
 
-	public CheckedException(String message, Throwable cause, boolean enableSuppression, boolean writableStackTrace) {
+	public PigDeniedException(String message, Throwable cause, boolean enableSuppression, boolean writableStackTrace) {
 		super(message, cause, enableSuppression, writableStackTrace);
 	}
 

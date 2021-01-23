@@ -16,31 +16,19 @@
 
 package com.sumu.common.core.exception;
 
-import lombok.NoArgsConstructor;
-
 /**
  * @author lengleng
- * @date 😴2018年06月22日16:21:57
+ * @date 2018年06月22日16:22:15
  */
-@NoArgsConstructor
-public class CheckedException extends RuntimeException {
+public class ValidateCodeException extends RuntimeException {
 
-	private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = -7285211528095468156L;
 
-	public CheckedException(String message) {
-		super(message);
+	public ValidateCodeException() {
 	}
 
-	public CheckedException(Throwable cause) {
-		super(cause);
-	}
-
-	public CheckedException(String message, Throwable cause) {
-		super(message, cause);
-	}
-
-	public CheckedException(String message, Throwable cause, boolean enableSuppression, boolean writableStackTrace) {
-		super(message, cause, enableSuppression, writableStackTrace);
+	public ValidateCodeException(String msg) {
+		super(msg);
 	}
 
 }

@@ -11,11 +11,10 @@
 
     <modules>
         <module>sumu-common-core</module>
-        <module>sumu-common-redis</module>
         <module>sumu-common-swagger</module>
         <module>sumu-common-log</module>
         <module>sumu-common-security</module>
-        <module>sumu-common-datascope</module>
+        <module>sumu-common-mybatis</module>
     </modules>
 
     <artifactId>sumu-common</artifactId>

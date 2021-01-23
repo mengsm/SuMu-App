@@ -14,33 +14,22 @@
  * limitations under the License.
  */
 
-package com.sumu.common.core.exception;
+package com.sumu.common.core.config;
 
-import lombok.NoArgsConstructor;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.web.client.RestTemplate;
 
 /**
  * @author lengleng
- * @date 😴2018年06月22日16:21:57
+ * @date 2019/2/1 RestTemplate
  */
-@NoArgsConstructor
-public class CheckedException extends RuntimeException {
+@Configuration(proxyBeanMethods = false)
+public class RestTemplateConfiguration {
 
-	private static final long serialVersionUID = 1L;
-
-	public CheckedException(String message) {
-		super(message);
-	}
-
-	public CheckedException(Throwable cause) {
-		super(cause);
-	}
-
-	public CheckedException(String message, Throwable cause) {
-		super(message, cause);
-	}
-
-	public CheckedException(String message, Throwable cause, boolean enableSuppression, boolean writableStackTrace) {
-		super(message, cause, enableSuppression, writableStackTrace);
+	@Bean
+	public RestTemplate restTemplate() {
+		return new RestTemplate();
 	}
 
 }

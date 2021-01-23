@@ -14,33 +14,39 @@
  * limitations under the License.
  */
 
-package com.sumu.common.core.exception;
+package com.sumu.common.core.constant.enums;
 
-import lombok.NoArgsConstructor;
+import lombok.Getter;
+import lombok.RequiredArgsConstructor;
 
 /**
  * @author lengleng
- * @date 😴2018年06月22日16:21:57
+ * @date 2019-05-16
+ * <p>
+ * 字典类型
  */
-@NoArgsConstructor
-public class CheckedException extends RuntimeException {
+@Getter
+@RequiredArgsConstructor
+public enum DictTypeEnum {
 
-	private static final long serialVersionUID = 1L;
+	/**
+	 * 字典类型-系统内置（不可修改）
+	 */
+	SYSTEM("1", "系统内置"),
 
-	public CheckedException(String message) {
-		super(message);
-	}
+	/**
+	 * 字典类型-业务类型
+	 */
+	BIZ("0", "业务类");
 
-	public CheckedException(Throwable cause) {
-		super(cause);
-	}
+	/**
+	 * 类型
+	 */
+	private final String type;
 
-	public CheckedException(String message, Throwable cause) {
-		super(message, cause);
-	}
-
-	public CheckedException(String message, Throwable cause, boolean enableSuppression, boolean writableStackTrace) {
-		super(message, cause, enableSuppression, writableStackTrace);
-	}
+	/**
+	 * 描述
+	 */
+	private final String description;
 
 }

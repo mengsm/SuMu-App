@@ -16,18 +16,18 @@
     </description>
 
     <dependencies>
-
-        <!-- sumu Api System -->
         <dependency>
             <groupId>com.sumu</groupId>
-            <artifactId>sumu-api-system</artifactId>
+            <artifactId>sumu-common-core</artifactId>
+            <version>${sumu.version}</version>
         </dependency>
 
-        <!-- sumu Common Redis-->
+        <!--安全模块-->
         <dependency>
-            <groupId>com.sumu</groupId>
-            <artifactId>sumu-common-redis</artifactId>
+            <groupId>org.springframework.security.oauth.boot</groupId>
+            <artifactId>spring-security-oauth2-autoconfigure</artifactId>
         </dependency>
+
 
     </dependencies>
 

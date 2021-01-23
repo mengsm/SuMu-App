@@ -14,33 +14,42 @@
  * limitations under the License.
  */
 
-package com.sumu.common.core.exception;
+package com.sumu.common.core.constant.enums;
 
-import lombok.NoArgsConstructor;
+import lombok.Getter;
+import lombok.RequiredArgsConstructor;
 
 /**
  * @author lengleng
- * @date 😴2018年06月22日16:21:57
+ * @date 2018/8/15 社交登录类型
  */
-@NoArgsConstructor
-public class CheckedException extends RuntimeException {
+@Getter
+@RequiredArgsConstructor
+public enum LoginTypeEnum {
 
-	private static final long serialVersionUID = 1L;
+	/**
+	 * 账号密码登录
+	 */
+	PWD("PWD", "账号密码登录"),
 
-	public CheckedException(String message) {
-		super(message);
-	}
+	/**
+	 * QQ登录
+	 */
+	QQ("QQ", "QQ登录"),
 
-	public CheckedException(Throwable cause) {
-		super(cause);
-	}
+	/**
+	 * 微信登录
+	 */
+	WECHAT("WX", "微信登录");
 
-	public CheckedException(String message, Throwable cause) {
-		super(message, cause);
-	}
+	/**
+	 * 类型
+	 */
+	private final String type;
 
-	public CheckedException(String message, Throwable cause, boolean enableSuppression, boolean writableStackTrace) {
-		super(message, cause, enableSuppression, writableStackTrace);
-	}
+	/**
+	 * 描述
+	 */
+	private final String description;
 
 }

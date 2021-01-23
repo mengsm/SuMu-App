@@ -17,10 +17,10 @@
 
 
     <dependencies>
-        <!-- sumu Common Security -->
         <dependency>
             <groupId>com.sumu</groupId>
-            <artifactId>sumu-common-security</artifactId>
+            <artifactId>sumu-common-core</artifactId>
+            <version>${sumu.version}</version>
         </dependency>
     </dependencies>
 

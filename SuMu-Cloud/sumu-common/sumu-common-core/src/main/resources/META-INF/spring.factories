@@ -1,4 +1,6 @@
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-  com.sumu.common.core.utils.SpringUtils
-
-
+  com.sumu.common.core.config.JacksonConfiguration,\
+  com.sumu.common.core.config.RedisTemplateConfiguration,\
+  com.sumu.common.core.config.RestTemplateConfiguration,\
+  com.sumu.common.core.util.SpringContextHolder,\
+  com.sumu.common.core.config.WebMvcConfiguration

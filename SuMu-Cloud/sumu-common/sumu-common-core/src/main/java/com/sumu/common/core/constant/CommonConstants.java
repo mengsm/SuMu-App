@@ -18,50 +18,78 @@ package com.sumu.common.core.constant;
 
 /**
  * @author lengleng
- * @date 2020年01月01日
- * <p>
- * 缓存的key 常量
+ * @date 2019/2/1
  */
-public interface CacheConstants {
+public interface CommonConstants {
 
 	/**
-	 * oauth 缓存前缀
+	 * 删除
 	 */
-	String PROJECT_OAUTH_ACCESS = "pig_oauth:access:";
+	String STATUS_DEL = "1";
 
 	/**
-	 * oauth 缓存令牌前缀
+	 * 正常
 	 */
-	String PROJECT_OAUTH_TOKEN = "pig_oauth:token:";
+	String STATUS_NORMAL = "0";
+
+	/**
+	 * 锁定
+	 */
+	String STATUS_LOCK = "9";
+
+	/**
+	 * 菜单树根节点
+	 */
+	Integer MENU_TREE_ROOT_ID = -1;
+
+	/**
+	 * 菜单
+	 */
+	String MENU = "0";
+
+	/**
+	 * 编码
+	 */
+	String UTF8 = "UTF-8";
+
+	/**
+	 * JSON 资源
+	 */
+	String CONTENT_TYPE = "application/json; charset=utf-8";
+
+	/**
+	 * 前端工程名
+	 */
+	String FRONT_END_PROJECT = "pig-ui";
+
+	/**
+	 * 后端工程名
+	 */
+	String BACK_END_PROJECT = "pig";
+
+	/**
+	 * 成功标记
+	 */
+	Integer SUCCESS = 0;
+
+	/**
+	 * 失败标记
+	 */
+	Integer FAIL = 1;
 
 	/**
 	 * 验证码前缀
 	 */
-	String DEFAULT_CODE_KEY = "DEFAULT_CODE_KEY:";
+	String DEFAULT_CODE_KEY = "DEFAULT_CODE_KEY_";
 
 	/**
-	 * 菜单信息缓存
+	 * 当前页
 	 */
-	String MENU_DETAILS = "menu_details";
+	String CURRENT = "current";
 
 	/**
-	 * 用户信息缓存
+	 * size
 	 */
-	String USER_DETAILS = "user_details";
-
-	/**
-	 * 字典信息缓存
-	 */
-	String DICT_DETAILS = "dict_details";
-
-	/**
-	 * oauth 客户端信息
-	 */
-	String CLIENT_DETAILS_KEY = "pig_oauth:client:details";
-
-	/**
-	 * 参数缓存
-	 */
-	String PARAMS_DETAILS = "params_details";
+	String SIZE = "size";
 
 }

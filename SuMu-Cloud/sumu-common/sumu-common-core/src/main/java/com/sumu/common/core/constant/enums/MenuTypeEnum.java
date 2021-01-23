@@ -14,33 +14,44 @@
  * limitations under the License.
  */
 
-package com.sumu.common.core.exception;
+package com.sumu.common.core.constant.enums;
 
-import lombok.NoArgsConstructor;
+import lombok.Getter;
+import lombok.RequiredArgsConstructor;
 
 /**
  * @author lengleng
- * @date 😴2018年06月22日16:21:57
+ * @date 2020-02-17
+ * <p>
+ * 菜单类型
  */
-@NoArgsConstructor
-public class CheckedException extends RuntimeException {
+@Getter
+@RequiredArgsConstructor
+public enum MenuTypeEnum {
 
-	private static final long serialVersionUID = 1L;
+	/**
+	 * 左侧菜单
+	 */
+	LEFT_MENU("0", "left"),
 
-	public CheckedException(String message) {
-		super(message);
-	}
+	/**
+	 * 顶部菜单
+	 */
+	TOP_MENU("2", "top"),
 
-	public CheckedException(Throwable cause) {
-		super(cause);
-	}
+	/**
+	 * 按钮
+	 */
+	BUTTON("1", "button");
 
-	public CheckedException(String message, Throwable cause) {
-		super(message, cause);
-	}
+	/**
+	 * 类型
+	 */
+	private final String type;
 
-	public CheckedException(String message, Throwable cause, boolean enableSuppression, boolean writableStackTrace) {
-		super(message, cause, enableSuppression, writableStackTrace);
-	}
+	/**
+	 * 描述
+	 */
+	private final String description;
 
 }
