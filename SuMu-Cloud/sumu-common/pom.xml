@@ -16,6 +16,7 @@
         <module>sumu-common-security</module>
         <module>sumu-common-mybatis</module>
         <module>sumu-common-feign</module>
+        <module>sumu-common-test</module>
     </modules>
 
     <artifactId>sumu-common</artifactId>
