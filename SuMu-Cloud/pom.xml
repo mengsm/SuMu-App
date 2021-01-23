@@ -159,6 +159,13 @@
                 <version>${sumu.version}</version>
             </dependency>
 
+            <!--UPMS API-->
+            <dependency>
+                <groupId>com.sumu</groupId>
+                <artifactId>sumu-upms-api</artifactId>
+                <version>${sumu.version}</version>
+            </dependency>
+
         </dependencies>
     </dependencyManagement>
 

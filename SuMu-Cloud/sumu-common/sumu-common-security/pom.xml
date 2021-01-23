@@ -28,6 +28,12 @@
             <artifactId>spring-security-oauth2-autoconfigure</artifactId>
         </dependency>
 
+        <!--UPMS API-->
+        <dependency>
+            <groupId>com.sumu</groupId>
+            <artifactId>sumu-upms-api</artifactId>
+            <version>${sumu.version}</version>
+        </dependency>
 
     </dependencies>
 
