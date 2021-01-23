@@ -1,0 +1,7 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+  com.sumu.admin.api.feign.fallback.RemoteLogServiceFallbackImpl,\
+  com.sumu.admin.api.feign.fallback.RemoteUserServiceFallbackImpl,\
+  com.sumu.admin.api.feign.fallback.RemoteTokenServiceFallbackImpl,\
+  com.sumu.admin.api.feign.factory.RemoteUserServiceFallbackFactory,\
+  com.sumu.admin.api.feign.factory.RemoteLogServiceFallbackFactory,\
+  com.sumu.admin.api.feign.factory.RemoteTokenServiceFallbackFactory

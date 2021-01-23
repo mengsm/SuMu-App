@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>sumu-upms</artifactId>
+        <groupId>com.sumu</groupId>
+        <version>1.0.0</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>sumu-upms-api</artifactId>
+    <packaging>jar</packaging>
+
+    <description>通用用户权限管理系统公共api模块</description>
+
+    <dependencies>
+        <!--core 工具类-->
+        <dependency>
+            <groupId>com.sumu</groupId>
+            <artifactId>sumu-common-core</artifactId>
+            <version>${sumu.version}</version>
+        </dependency>
+        <!--feign 依赖-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-openfeign</artifactId>
+        </dependency>
+        <!--断路器依赖-->
+        <dependency>
+            <groupId>com.sumu</groupId>
+            <artifactId>sumu-common-feign</artifactId>
+            <version>${sumu.version}</version>
+        </dependency>
+    </dependencies>
+</project>

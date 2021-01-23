@@ -9,20 +9,11 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <modules>
-        <module>sumu-common-core</module>
-        <module>sumu-common-swagger</module>
-        <module>sumu-common-log</module>
-        <module>sumu-common-security</module>
-        <module>sumu-common-mybatis</module>
-        <module>sumu-common-feign</module>
-    </modules>
-
-    <artifactId>sumu-common</artifactId>
+    <artifactId>sumu-upms</artifactId>
     <packaging>pom</packaging>
 
-    <description>
-        sumu-common通用模块
-    </description>
+    <modules>
+        <module>sumu-upms-api</module>
+    </modules>
 
 </project>
