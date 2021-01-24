@@ -18,7 +18,7 @@ import java.lang.reflect.Method;
 /**
  * 类工具类
  *
- * @author L.cm
+ * @author sumu
  */
 @UtilityClass
 public class ClassUtils extends org.springframework.util.ClassUtils {

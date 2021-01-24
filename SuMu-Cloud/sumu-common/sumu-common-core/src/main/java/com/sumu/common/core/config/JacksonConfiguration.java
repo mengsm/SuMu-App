@@ -22,7 +22,7 @@ import java.util.TimeZone;
  * JacksonConfig
  *
  * @author sumu
- * @author L.cm
+ * @author sumu
  * @author lishangbu
  * @date 2020-06-17
  */
