@@ -16,12 +16,12 @@ import org.springframework.security.oauth2.client.resource.OAuth2ProtectedResour
  */
 @Configuration(proxyBeanMethods = false)
 @ConditionalOnProperty("security.oauth2.client.client-id")
-public class PigFeignClientConfiguration {
+public class SuMuFeignClientConfiguration {
 
 	@Bean
 	public RequestInterceptor oauth2FeignRequestInterceptor(OAuth2ClientContext oAuth2ClientContext,
 			OAuth2ProtectedResourceDetails resource, AccessTokenContextRelay accessTokenContextRelay) {
-		return new PigFeignClientInterceptor(oAuth2ClientContext, resource, accessTokenContextRelay);
+		return new SuMuFeignClientInterceptor(oAuth2ClientContext, resource, accessTokenContextRelay);
 	}
 
 }

@@ -1,3 +1,3 @@
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-    com.sumu.common.feign.PigFeignAutoConfiguration,\
+    com.sumu.common.feign.SuMuFeignAutoConfiguration,\
     com.sumu.common.feign.handle.GlobalBizExceptionHandler

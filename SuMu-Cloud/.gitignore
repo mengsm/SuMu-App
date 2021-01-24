@@ -1,43 +1,58 @@
-######################################################################
-# Build Tools
-
+### gradle ###
 .gradle
 /build/
 !gradle/wrapper/gradle-wrapper.jar
 
-target/
-!.mvn/wrapper/maven-wrapper.jar
-
-######################################################################
-# IDE
-
 ### STS ###
+.settings/
 .apt_generated
 .classpath
 .factorypath
 .project
 .settings
 .springBeans
+bin/
 
 ### IntelliJ IDEA ###
 .idea
 *.iws
 *.iml
 *.ipr
+rebel.xml
 
 ### NetBeans ###
 nbproject/private/
-build/*
+build/
 nbbuild/
-dist/
 nbdist/
 .nb-gradle/
 
-######################################################################
-# Others
-*.log
-*.xml.versionsBackup
+### maven ###
+target/
+*.war
+*.ear
+*.zip
+*.tar
+*.tar.gz
 
-!*/build/*.java
-!*/build/*.html
-!*/build/*.xml
+### vscode ###
+.vscode
+
+### logs ###
+/logs/
+*.log
+
+### temp ignore ###
+*.cache
+*.diff
+*.patch
+*.tmp
+*.java~
+*.properties~
+*.xml~
+
+### system ignore ###
+.DS_Store
+Thumbs.db
+Servers
+.metadata

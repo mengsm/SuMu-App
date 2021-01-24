@@ -87,7 +87,7 @@ public class SuMuTokenEndpoint {
 			modelAndView.addObject("user", SecurityUtils.getUser());
 		}
 
-		modelAndView.setViewName("ftl/confirm");
+		modelAndView.setViewName("templates.ftl/confirm");
 		return modelAndView;
 	}
 

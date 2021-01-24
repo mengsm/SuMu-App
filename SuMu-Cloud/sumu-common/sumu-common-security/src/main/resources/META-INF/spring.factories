@@ -1,4 +1,4 @@
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-  com.sumu.common.security.service.PigUserDetailsServiceImpl,\
-  com.sumu.common.security.component.PigSecurityInnerAspect
+  com.sumu.common.security.service.SuMuUserDetailsServiceImpl,\
+  com.sumu.common.security.component.SuMuSecurityInnerAspect
 

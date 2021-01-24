@@ -36,7 +36,7 @@ import java.util.Set;
 @Slf4j
 @Service
 @RequiredArgsConstructor
-public class PigUserDetailsServiceImpl implements UserDetailsService {
+public class SuMuUserDetailsServiceImpl implements UserDetailsService {
 
 	private final RemoteUserService remoteUserService;
 
