@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>sumu-upms</artifactId>
+        <groupId>com.sumu</groupId>
+        <version>1.0.0</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>sumu-upms-biz</artifactId>
+    <packaging>jar</packaging>
+
+    <dependencies>
+        <!--UPMS API-->
+        <dependency>
+            <groupId>com.sumu</groupId>
+            <artifactId>sumu-upms-api</artifactId>
+            <version>${sumu.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.sumu</groupId>
+            <artifactId>sumu-common-security</artifactId>
+            <version>${sumu.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.sumu</groupId>
+            <artifactId>sumu-common-log</artifactId>
+            <version>${sumu.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.sumu</groupId>
+            <artifactId>sumu-common-swagger</artifactId>
+            <version>${sumu.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.sumu</groupId>
+            <artifactId>sumu-common-mybatis</artifactId>
+            <version>${sumu.version}</version>
+        </dependency>
+        <!--注册中心客户端-->
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
+        </dependency>
+        <!--配置中心客户端-->
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
+        </dependency>
+        <!--undertow容器-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-undertow</artifactId>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+            <!--            <plugin>-->
+            <!--                <groupId>io.fabric8</groupId>-->
+            <!--                <artifactId>docker-maven-plugin</artifactId>-->
+            <!--            </plugin>-->
+        </plugins>
+    </build>
+
+</project>

@@ -23,6 +23,6 @@ import java.lang.annotation.*;
 @Retention(RetentionPolicy.RUNTIME)
 @EnableGlobalMethodSecurity(prePostEnabled = true)
 @Import({ SuMuResourceServerAutoConfiguration.class, SuMuSecurityBeanDefinitionRegistrar.class })
-public @interface EnablePigResourceServer {
+public @interface EnableSuMuResourceServer {
 
 }

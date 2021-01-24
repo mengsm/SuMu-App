@@ -20,7 +20,7 @@ import org.springframework.web.reactive.function.server.RouterFunctions;
  */
 @RequiredArgsConstructor
 @ConditionalOnWebApplication(type = ConditionalOnWebApplication.Type.REACTIVE)
-@ComponentScan("com.pig4cloud.pig.common.swagger.support")
+@ComponentScan("com.sumu.common.swagger.support")
 public class GatewaySwaggerAutoConfiguration {
 
 	private final SwaggerResourceHandler swaggerResourceHandler;
