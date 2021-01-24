@@ -11,7 +11,7 @@ import org.springframework.security.oauth2.provider.client.JdbcClientDetailsServ
 import javax.sql.DataSource;
 
 /**
- * @author lengleng
+ * @author sumu
  * @date 2019/2/1
  * <p>
  * see JdbcClientDetailsService

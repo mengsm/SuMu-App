@@ -8,7 +8,7 @@ import org.springframework.cloud.openfeign.FallbackFactory;
 import org.springframework.stereotype.Component;
 
 /**
- * @author lengleng
+ * @author sumu
  * @date 2019/2/1
  */
 @Component

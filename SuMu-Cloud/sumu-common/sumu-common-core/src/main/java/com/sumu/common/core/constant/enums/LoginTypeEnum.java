@@ -6,7 +6,7 @@ import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 
 /**
- * @author lengleng
+ * @author sumu
  * @date 2018/8/15 社交登录类型
  */
 @Getter

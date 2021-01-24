@@ -18,7 +18,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.PrintWriter;
 
 /**
- * @author lengleng
+ * @author sumu
  * @date 2019/2/1 客户端异常处理 1. 可以根据 AuthenticationException 不同细化异常处理
  */
 @Slf4j

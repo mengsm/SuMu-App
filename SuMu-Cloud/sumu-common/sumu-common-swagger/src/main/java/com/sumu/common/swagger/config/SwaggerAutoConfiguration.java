@@ -1,5 +1,5 @@
 /*
- *    Copyright (c) 2018-2025, lengleng All rights reserved.
+ *    Copyright (c) 2018-2025, sumu All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions are met:
@@ -12,7 +12,7 @@
  * Neither the name of the pig4cloud.com developer nor the names of its
  * contributors may be used to endorse or promote products derived from
  * this software without specific prior written permission.
- * Author: lengleng (wangiegie@gmail.com)
+ * Author: sumu (wangiegie@gmail.com)
  */
 package com.sumu.common.swagger.config;
 
@@ -39,7 +39,7 @@ import java.util.List;
 import java.util.function.Predicate;
 
 /**
- * @author lengleng swagger配置 禁用方法1：使用注解@Profile({"dev","test"})
+ * @author sumu swagger配置 禁用方法1：使用注解@Profile({"dev","test"})
  * 表示在开发或测试环境开启，而在生产关闭。（推荐使用） 禁用方法2：使用注解@ConditionalOnProperty(name = "swagger.enable",
  * havingValue = "true") 然后在测试配置或者开发配置中添加swagger.enable=true即可开启，生产环境不填则默认关闭Swagger.
  */

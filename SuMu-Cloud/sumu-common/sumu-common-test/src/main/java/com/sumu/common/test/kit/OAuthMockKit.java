@@ -6,7 +6,7 @@ import org.springframework.security.oauth2.client.OAuth2ClientContext;
 import org.springframework.test.web.servlet.request.RequestPostProcessor;
 
 /**
- * @author lengleng
+ * @author sumu
  * @date 2020/9/22
  * <p>
  * Mock 工具类

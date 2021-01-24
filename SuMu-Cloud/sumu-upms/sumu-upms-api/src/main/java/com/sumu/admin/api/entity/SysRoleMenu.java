@@ -12,7 +12,7 @@ import lombok.EqualsAndHashCode;
  * 角色菜单表
  * </p>
  *
- * @author lengleng
+ * @author sumu
  * @since 2019/2/1
  */
 @Data

@@ -5,7 +5,7 @@ package com.sumu.common.core.exception;
 import lombok.NoArgsConstructor;
 
 /**
- * @author lengleng
+ * @author sumu
  * @date 😴2018年06月22日16:21:57
  */
 @NoArgsConstructor

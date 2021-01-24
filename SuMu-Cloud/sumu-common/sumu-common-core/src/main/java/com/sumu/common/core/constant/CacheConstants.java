@@ -3,7 +3,7 @@
 package com.sumu.common.core.constant;
 
 /**
- * @author lengleng
+ * @author sumu
  * @date 2020年01月01日
  * <p>
  * 缓存的key 常量

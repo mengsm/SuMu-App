@@ -12,7 +12,7 @@ import org.springframework.http.HttpHeaders;
 import javax.servlet.http.HttpServletRequest;
 
 /**
- * @author lengleng
+ * @author sumu
  * @date 2019/2/1 认证授权相关工具类
  */
 @Slf4j

@@ -3,7 +3,7 @@
 package com.sumu.common.security.component;
 
 /**
- * @author lengleng
+ * @author sumu
  * @date 2019/2/1
  */
 
@@ -24,7 +24,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.PrintWriter;
 
 /**
- * @author lengleng 授权拒绝处理器，覆盖默认的OAuth2AccessDeniedHandler 包装失败信息到PigDeniedException
+ * @author sumu 授权拒绝处理器，覆盖默认的OAuth2AccessDeniedHandler 包装失败信息到PigDeniedException
  */
 @Slf4j
 @Component

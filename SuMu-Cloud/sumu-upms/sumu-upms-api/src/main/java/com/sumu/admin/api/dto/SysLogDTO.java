@@ -7,7 +7,7 @@ import lombok.Data;
 import java.time.LocalDateTime;
 
 /**
- * @author lengleng
+ * @author sumu
  * @date 2020/10/9
  * <p>
  * 日志查询传输对象

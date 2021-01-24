@@ -18,7 +18,7 @@ import javax.servlet.http.HttpServletResponse;
  * <p>
  * {@link com.alibaba.csp.sentinel.adapter.spring.webmvc.callback.DefaultBlockExceptionHandler}
  *
- * @author lengleng
+ * @author sumu
  * @date 2020-06-11
  */
 @Slf4j

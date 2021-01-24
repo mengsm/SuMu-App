@@ -7,7 +7,7 @@ import com.sumu.common.security.component.SuMuAuth2ExceptionSerializer;
 import org.springframework.http.HttpStatus;
 
 /**
- * @author lengleng
+ * @author sumu
  * @date 2019/2/1
  */
 @JsonSerialize(using = SuMuAuth2ExceptionSerializer.class)

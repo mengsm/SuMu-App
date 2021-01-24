@@ -16,7 +16,7 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 
 /**
- * @author lengleng
+ * @author sumu
  * @date 2019-03-07
  * <p>
  * 根据checktoken 的结果转化用户信息

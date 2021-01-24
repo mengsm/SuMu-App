@@ -7,7 +7,7 @@ import java.lang.annotation.*;
 /**
  * 服务调用不鉴权注解
  *
- * @author lengleng
+ * @author sumu
  * @date 2020-06-14
  */
 @Target({ ElementType.METHOD, ElementType.TYPE })

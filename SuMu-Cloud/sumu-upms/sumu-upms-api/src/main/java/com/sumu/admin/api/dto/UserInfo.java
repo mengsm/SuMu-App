@@ -8,7 +8,7 @@ import lombok.Data;
 import java.io.Serializable;
 
 /**
- * @author lengleng
+ * @author sumu
  * @date 2019/2/1
  * <p>
  * commit('SET_ROLES', data) commit('SET_NAME', data) commit('SET_AVATAR', data)

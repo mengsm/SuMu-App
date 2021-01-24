@@ -7,7 +7,7 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 
 /**
- * @author lengleng
+ * @author sumu
  * @date 2020/9/22
  * <p>
  * WithMockOAuth2User 注解

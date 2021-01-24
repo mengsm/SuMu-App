@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * @author lengleng
+ * @author sumu
  * @date 2019-08-20
  * <p>
  * 表单登录失败处理逻辑

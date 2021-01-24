@@ -6,7 +6,7 @@ import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 
 /**
- * @author lengleng
+ * @author sumu
  * @date 2019-05-16
  * <p>
  * 字典类型

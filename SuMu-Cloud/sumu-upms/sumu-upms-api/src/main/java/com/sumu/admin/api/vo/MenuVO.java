@@ -12,7 +12,7 @@ import java.time.LocalDateTime;
  * 菜单权限表
  * </p>
  *
- * @author lengleng
+ * @author sumu
  * @since 2017-11-08
  */
 @Data
