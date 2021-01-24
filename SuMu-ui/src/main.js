@@ -1,76 +1,68 @@
+import 'babel-polyfill'
+import 'classlist-polyfill'
 import Vue from 'vue'
-
-import Cookies from 'js-cookie'
-
-import 'normalize.css/normalize.css' // a modern alternative to CSS resets
-
-import Element from 'element-ui'
-import './assets/styles/element-variables.scss'
-
-import '@/assets/styles/index.scss' // global css
-import '@/assets/styles/ruoyi.scss' // ruoyi css
+import axios from './router/axios'
+import VueAxios from 'vue-axios'
 import App from './App'
+import ElementUI from 'element-ui'
+import 'element-ui/lib/theme-chalk/index.css'
+import Avue from '@smallwei/avue'
+import '@smallwei/avue/lib/index.css'
+import AvueFormDesign from '@sscfaith/avue-form-design'
+import './permission' // 权限
+import './error' // 日志
+import router from './router/router'
 import store from './store'
-import router from './router'
-import permission from './directive/permission'
-import { download } from '@/utils/request'
+import { loadStyle } from './util/util'
+import * as urls from '@/config/env'
+import {
+  iconfontUrl,
+  iconfontVersion
+} from '@/config/env'
+import * as filters from './filters' // 全局filter
+import './styles/common.scss'
+import basicContainer from './components/basic-container/main'
 
-import './assets/icons' // icon
-import './permission' // permission control
-import { getDicts } from "@/api/system/dict/data";
-import { getConfigKey } from "@/api/system/config";
-import { parseTime, resetForm, addDateRange, selectDictLabel, selectDictLabels, handleTree } from "@/utils/ruoyi";
-import Pagination from "@/components/Pagination";
-//自定义表格工具扩展
-import RightToolbar from "@/components/RightToolbar"
+window.axios = axios
+Vue.use(VueAxios, axios)
 
-// 全局方法挂载
-Vue.prototype.getDicts = getDicts
-Vue.prototype.getConfigKey = getConfigKey
-Vue.prototype.parseTime = parseTime
-Vue.prototype.resetForm = resetForm
-Vue.prototype.addDateRange = addDateRange
-Vue.prototype.selectDictLabel = selectDictLabel
-Vue.prototype.selectDictLabels = selectDictLabels
-Vue.prototype.download = download
-Vue.prototype.handleTree = handleTree
+Vue.use(ElementUI, {
+  size: 'small',
+  menuType: 'text'
+})
 
-Vue.prototype.msgSuccess = function (msg) {
-  this.$message({ showClose: true, message: msg, type: "success" });
-}
+Vue.use(Avue, {
+  size: 'small',
+  menuType: 'text'
+})
 
-Vue.prototype.msgError = function (msg) {
-  this.$message({ showClose: true, message: msg, type: "error" });
-}
+Vue.use(router)
 
-Vue.prototype.msgInfo = function (msg) {
-  this.$message.info(msg);
-}
+Vue.use(AvueFormDesign);
 
-// 全局组件挂载
-Vue.component('Pagination', Pagination)
-Vue.component('RightToolbar', RightToolbar)
+// 注册全局容器
+Vue.component('basicContainer', basicContainer)
 
-Vue.use(permission)
+// 加载相关url地址
+Object.keys(urls).forEach(key => {
+  Vue.prototype[key] = urls[key]
+})
 
-/**
- * If you don't want to use mock-server
- * you want to use MockJs for mock api
- * you can execute: mockXHR()
- *
- * Currently MockJs will be used in the production environment,
- * please remove it before going online! ! !
- */
+//加载过滤器
+Object.keys(filters).forEach(key => {
+  Vue.filter(key, filters[key])
+})
 
-Vue.use(Element, {
-  size: Cookies.get('size') || 'medium' // set element-ui default size
+// 动态加载阿里云字体库
+iconfontVersion.forEach(ele => {
+  console.log(iconfontUrl.replace('$key', ele))
+  loadStyle(iconfontUrl.replace('$key', ele))
 })
 
 Vue.config.productionTip = false
 
 new Vue({
-  el: '#app',
   router,
   store,
   render: h => h(App)
-})
+}).$mount('#app')

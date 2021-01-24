@@ -1,64 +1,72 @@
-import router from './router'
-import store from './store'
-import { Message } from 'element-ui'
-import NProgress from 'nprogress'
-import 'nprogress/nprogress.css'
-import { getToken } from '@/utils/auth'
+/**
+ * 全站权限配置
+ *
+ */
+import router from './router/router'
+import store from '@/store'
+import {validatenull} from '@/util/validate'
+import NProgress from 'nprogress' // progress bar
+import 'nprogress/nprogress.css' // progress bar style
+NProgress.configure({showSpinner: false})
 
-NProgress.configure({ showSpinner: false })
-
-const whiteList = ['/login', '/auth-redirect', '/bind', '/register']
-
+/**
+ * 导航守卫，相关内容可以参考:
+ * https://router.vuejs.org/zh/guide/advanced/navigation-guards.html
+ */
 router.beforeEach((to, from, next) => {
-  NProgress.start()
-  if (getToken()) {
-    /* has token*/
-    if (to.path === '/login') {
-      next({ path: '/' })
-      NProgress.done()
+  // 缓冲设置
+  if (to.meta.keepAlive === true && store.state.tags.tagList.some(ele => {
+    return ele.value === to.fullPath
+  })) {
+    to.meta.$keepAlive = true
+  } else {
+    NProgress.start()
+    if (to.meta.keepAlive === true && validatenull(to.meta.$keepAlive)) {
+      to.meta.$keepAlive = true
     } else {
+      to.meta.$keepAlive = false
+    }
+  }
+  const meta = to.meta || {}
+  if (store.getters.access_token) {
+   if (to.path === '/login') {
+      next({path: '/'})
+    } else {
+      // NOTE: 当用户角色不存在时，会存在无限请求用户信息接口的问题
       if (store.getters.roles.length === 0) {
-        // 判断当前用户是否已拉取完user_info信息
-        store.dispatch('GetInfo').then(res => {
-          // 拉取user_info
-          const roles = res.roles
-          store.dispatch('GenerateRoutes', { roles }).then(accessRoutes => {
-          // 测试 默认静态页面
-          // store.dispatch('permission/generateRoutes', { roles }).then(accessRoutes => {
-            // 根据roles权限生成可访问的路由表
-            router.addRoutes(accessRoutes) // 动态添加可访问路由表
-            next({ ...to, replace: true }) // hack方法 确保addRoutes已完成
+        store.dispatch('GetUserInfo').then(() => {
+          next()
+        }).catch(() => {
+          store.dispatch('FedLogOut').then(() => {
+            next({path: '/login'})
           })
         })
-          .catch(err => {
-            store.dispatch('FedLogOut').then(() => {
-              Message.error(err)
-              next({ path: '/' })
-            })
-          })
       } else {
+        const value = to.query.src || to.fullPath
+        const label = to.query.name || to.name
+        if (meta.isTab !== false && !validatenull(value) && !validatenull(label)) {
+          store.commit('ADD_TAG', {
+            label: label,
+            value: value,
+            params: to.params,
+            query: to.query,
+            group: router.$avueRouter.group || []
+          })
+        }
         next()
-        // 没有动态改变权限的需求可直接next() 删除下方权限判断 ↓
-        // if (hasPermission(store.getters.roles, to.meta.roles)) {
-        //   next()
-        // } else {
-        //   next({ path: '/401', replace: true, query: { noGoBack: true }})
-        // }
-        // 可删 ↑
       }
     }
   } else {
-    // 没有token
-    if (whiteList.indexOf(to.path) !== -1) {
-      // 在免登录白名单，直接进入
+    if (meta.isAuth === false) {
       next()
     } else {
-      next(`/login?redirect=${to.fullPath}`) // 否则全部重定向到登录页
-      NProgress.done()
+      next('/login')
     }
   }
 })
 
 router.afterEach(() => {
   NProgress.done()
+  const title = store.getters.tag.label
+  router.$avueRouter.setTitle(title)
 })

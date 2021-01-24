@@ -32,7 +32,7 @@
 		<result column="deptId" property="deptId"/>
 		<result column="deptName" property="deptName"/>
 		<collection property="roleList" ofType="com.sumu.admin.api.entity.SysRole"
-					select="com.sumu.admin.biz.mapper.SysRoleMapper.listRolesByUserId" column="user_id">
+					select="com.pig4cloud.pig.admin.mapper.SysRoleMapper.listRolesByUserId" column="user_id">
 		</collection>
 	</resultMap>
 
@@ -49,7 +49,7 @@
 		<result column="lock_flag" property="lockFlag"/>
 		<result column="udel_flag" property="delFlag"/>
 		<result column="deptId" property="deptId"/>
-		<result column="deptName" property="deptName"/>`
+		<result column="deptName" property="deptName"/>
 		<collection property="roleList" ofType="com.sumu.admin.api.entity.SysRole">
 			<id column="role_id" property="roleId"/>
 			<result column="role_name" property="roleName"/>
@@ -100,7 +100,7 @@
 		r.update_time AS rupdate_time,
 		d.name AS deptName,
 		d.dept_id AS deptId
-    </sql>
+	</sql>
 
 	<select id="getUserVoByUsername" resultMap="userVoResultMap">
 		SELECT

@@ -1,115 +1,201 @@
-import { login, logout, getInfo, refreshToken } from '@/api/login'
-import { getToken, setToken, setExpiresIn, removeToken } from '@/utils/auth'
+import {getStore, setStore} from '@/util/store'
+import {isURL, validatenull} from '@/util/validate'
+import {getUserInfo, loginByUsername, logout, refreshToken} from '@/api/login'
+import {deepClone, encryption} from '@/util/util'
+import webiste from '@/const/website'
+import {getMenu} from '@/api/admin/menu'
+
+function addPath(ele, first) {
+  const menu = webiste.menu
+  const propsConfig = menu.props
+  const propsDefault = {
+    label: propsConfig.label || 'name',
+    path: propsConfig.path || 'path',
+    icon: propsConfig.icon || 'icon',
+    children: propsConfig.children || 'children'
+  }
+  const icon = ele[propsDefault.icon]
+  ele[propsDefault.icon] = validatenull(icon) ? menu.iconDefault : icon
+  const isChild = ele[propsDefault.children] && ele[propsDefault.children].length !== 0
+  if (!isChild) ele[propsDefault.children] = []
+  if (!isChild && first && !isURL(ele[propsDefault.path])) {
+    ele[propsDefault.path] = ele[propsDefault.path] + '/index'
+  } else {
+    ele[propsDefault.children].forEach(child => {
+      addPath(child)
+    })
+  }
+}
 
 const user = {
   state: {
-    token: getToken(),
-    name: '',
-    avatar: '',
+    userInfo: {},
+    permissions: {},
     roles: [],
-    permissions: []
+    menu: getStore({
+      name: 'menu'
+    }) || [],
+    menuAll: [],
+    expires_in: getStore({
+      name: 'expires_in'
+    }) || '',
+    access_token: getStore({
+      name: 'access_token'
+    }) || '',
+    refresh_token: getStore({
+      name: 'refresh_token'
+    }) || ''
   },
+  actions: {
+    // 根据用户名登录
+    LoginByUsername({commit}, userInfo) {
+      const user = encryption({
+        data: userInfo,
+        key: 'thanks,pig4cloud',
+        param: ['password']
+      })
+      return new Promise((resolve, reject) => {
+        loginByUsername(user.username, user.password, user.code, user.randomStr).then(response => {
+          const data = response.data
+          commit('SET_ACCESS_TOKEN', data.access_token)
+          commit('SET_REFRESH_TOKEN', data.refresh_token)
+          commit('SET_EXPIRES_IN', data.expires_in)
+          commit('CLEAR_LOCK')
+          resolve()
+        }).catch(error => {
+          reject(error)
+        })
+      })
+    },
+    GetUserInfo({commit}) {
+      return new Promise((resolve, reject) => {
+        getUserInfo().then((res) => {
+          const data = res.data.data || {}
+          commit('SET_USER_INFO', data.sysUser)
+          commit('SET_ROLES', data.roles || [])
+          commit('SET_PERMISSIONS', data.permissions || [])
+          resolve(data)
+        }).catch((err) => {
+          reject()
+        })
+      })
+    },
+    // 刷新token
+    RefreshToken({commit, state}) {
+      return new Promise((resolve, reject) => {
+        refreshToken(state.refresh_token).then(response => {
+          const data = response.data
+          commit('SET_ACCESS_TOKEN', data.access_token)
+          commit('SET_REFRESH_TOKEN', data.refresh_token)
+          commit('SET_EXPIRES_IN', data.expires_in)
+          commit('CLEAR_LOCK')
+          resolve()
+        }).catch(error => {
+          reject(error)
+        })
+      })
+    },
+    // 登出
+    LogOut({commit}) {
+      return new Promise((resolve, reject) => {
+        logout().then(() => {
+          commit('SET_MENU', [])
+          commit('SET_PERMISSIONS', [])
+          commit('SET_USER_INFO', {})
+          commit('SET_ACCESS_TOKEN', '')
+          commit('SET_REFRESH_TOKEN', '')
+          commit('SET_EXPIRES_IN', '')
+          commit('SET_ROLES', [])
+          commit('DEL_ALL_TAG')
+          commit('CLEAR_LOCK')
+          resolve()
+        }).catch(error => {
+          reject(error)
+        })
+      })
+    },
+    // 注销session
+    FedLogOut({commit}) {
+      return new Promise(resolve => {
+        commit('SET_MENU', [])
+        commit('SET_PERMISSIONS', [])
+        commit('SET_USER_INFO', {})
+        commit('SET_ACCESS_TOKEN', '')
+        commit('SET_REFRESH_TOKEN', '')
+        commit('SET_ROLES', [])
+        commit('DEL_ALL_TAG')
+        commit('CLEAR_LOCK')
+        resolve()
+      })
+    },
+    // 获取系统菜单
+    GetMenu({commit}, obj) {
+      return new Promise(resolve => {
+        getMenu(obj.id).then((res) => {
+          const data = res.data.data
+          let menu = deepClone(data)
+          menu.forEach(ele => {
+            addPath(ele)
+          })
+          let type = obj.type
+          commit('SET_MENU', {type, menu})
+          resolve(menu)
+        })
+      })
+    }
 
+  },
   mutations: {
-    SET_TOKEN: (state, token) => {
-      state.token = token
+    SET_ACCESS_TOKEN: (state, access_token) => {
+      state.access_token = access_token
+      setStore({
+        name: 'access_token',
+        content: state.access_token,
+        type: 'session'
+      })
     },
-    SET_EXPIRES_IN: (state, time) => {
-      state.expires_in = time
+    SET_EXPIRES_IN: (state, expires_in) => {
+      state.expires_in = expires_in
+      setStore({
+        name: 'expires_in',
+        content: state.expires_in,
+        type: 'session'
+      })
     },
-    SET_NAME: (state, name) => {
-      state.name = name
+    SET_REFRESH_TOKEN: (state, rfToken) => {
+      state.refresh_token = rfToken
+      setStore({
+        name: 'refresh_token',
+        content: state.refresh_token,
+        type: 'session'
+      })
     },
-    SET_AVATAR: (state, avatar) => {
-      state.avatar = avatar
+    SET_USER_INFO: (state, userInfo) => {
+      state.userInfo = userInfo
+    },
+    SET_MENU: (state, params = {}) => {
+      let {menu, type} = params;
+      if (type !== false) state.menu = menu
+      setStore({
+        name: 'menu',
+        content: menu,
+        type: 'session'
+      })
+    },
+    SET_MENU_ALL: (state, menuAll) => {
+      state.menuAll = menuAll
     },
     SET_ROLES: (state, roles) => {
       state.roles = roles
     },
     SET_PERMISSIONS: (state, permissions) => {
-      state.permissions = permissions
-    }
-  },
-
-  actions: {
-    // 登录
-    Login({ commit }, userInfo) {
-      const username = userInfo.username.trim()
-      const password = userInfo.password
-      const code = userInfo.code
-      const uuid = userInfo.uuid
-      return new Promise((resolve, reject) => {
-        login(username, password, code, uuid).then(res => {
-          let data = res.data
-          setToken(data.access_token)
-          commit('SET_TOKEN', data.access_token)
-          setExpiresIn(data.expires_in)
-          commit('SET_EXPIRES_IN', data.expires_in)
-          resolve()
-        }).catch(error => {
-          reject(error)
-        })
-      })
-    },
-
-    // 获取用户信息
-    GetInfo({ commit, state }) {
-      return new Promise((resolve, reject) => {
-        getInfo(state.token).then(res => {
-          const user = res.user
-          const avatar = user.avatar == "" ? require("@/assets/image/profile.jpg") : process.env.VUE_APP_BASE_API + user.avatar;
-          if (res.roles && res.roles.length > 0) { // 验证返回的roles是否是一个非空数组
-            commit('SET_ROLES', res.roles)
-            commit('SET_PERMISSIONS', res.permissions)
-          } else {
-            commit('SET_ROLES', ['ROLE_DEFAULT'])
-          }
-          commit('SET_NAME', user.userName)
-          commit('SET_AVATAR', avatar)
-          resolve(res)
-        }).catch(error => {
-          reject(error)
-        })
-      })
-    },
-
-    // 刷新token
-    RefreshToken({commit, state}) {
-      return new Promise((resolve, reject) => {
-        refreshToken(state.token).then(res => {
-          setExpiresIn(res.data)
-          commit('SET_EXPIRES_IN', res.data)
-          resolve()
-        }).catch(error => {
-          reject(error)
-        })
-      })
-    },
-    
-    // 退出系统
-    LogOut({ commit, state }) {
-      return new Promise((resolve, reject) => {
-        logout(state.token).then(() => {
-          commit('SET_TOKEN', '')
-          commit('SET_ROLES', [])
-          commit('SET_PERMISSIONS', [])
-          removeToken()
-          resolve()
-        }).catch(error => {
-          reject(error)
-        })
-      })
-    },
-
-    // 前端 登出
-    FedLogOut({ commit }) {
-      return new Promise(resolve => {
-        commit('SET_TOKEN', '')
-        removeToken()
-        resolve()
-      })
+      const list = {}
+      for (let i = 0; i < permissions.length; i++) {
+        list[permissions[i]] = true
+      }
+      state.permissions = list
     }
   }
-}
 
+}
 export default user
