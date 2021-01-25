@@ -28,6 +28,7 @@
         <fastjson.version>1.2.73</fastjson.version>
         <hutool.version>5.5.7</hutool.version>
         <jasypt.version>2.1.0</jasypt.version>
+        <captcha.version>2.2.0</captcha.version>
         <mybatis-plus.version>3.4.2</mybatis-plus.version>
         <security.oauth.version>2.3.6.RELEASE</security.oauth.version>
     </properties>
@@ -54,6 +55,15 @@
                 <scope>import</scope>
             </dependency>
 
+            <!-- SpringBoot 依赖配置 -->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${spring-boot.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
             <!--web 模块-->
             <dependency>
                 <groupId>org.springframework.boot</groupId>
@@ -73,15 +83,6 @@
                 <groupId>org.springframework.security.oauth</groupId>
                 <artifactId>spring-security-oauth2</artifactId>
                 <version>${security.oauth.version}</version>
-            </dependency>
-
-            <!-- SpringBoot 依赖配置 -->
-            <dependency>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-dependencies</artifactId>
-                <version>${spring-boot.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
             </dependency>
 
             <!--swagger 最新依赖内置版本-->
@@ -166,6 +167,7 @@
         <module>sumu-common</module>
         <module>sumu-upms</module>
         <module>sumu-auth</module>
+        <module>sumu-gateway</module>
     </modules>
     <packaging>pom</packaging>
 
