@@ -32,7 +32,7 @@
 		<result column="deptId" property="deptId"/>
 		<result column="deptName" property="deptName"/>
 		<collection property="roleList" ofType="com.sumu.admin.api.entity.SysRole"
-					select="com.pig4cloud.pig.admin.mapper.SysRoleMapper.listRolesByUserId" column="user_id">
+					select="com.sumu.admin.biz.mapper.SysRoleMapper.listRolesByUserId" column="user_id">
 		</collection>
 	</resultMap>
 
